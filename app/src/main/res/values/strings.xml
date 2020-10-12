@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MailmanMod</string>
+
+    <string name="channel_description">List: %s</string>
+    <!--string name="notification_title">[%s] %s</string-->
+
+    <plurals name="new_messages">
+        <item quantity="one">%d new message</item>
+        <item quantity="other">%d new messages</item>
+    </plurals>
+
+    <string name="confirmation_title">Are you sure?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="settings_global">Global</string>
+
+    <string name="lists_settings">Lists</string>
+    <string name="lists_string">List IDs, separated by line breaks</string>
+    <string name="lists_description">In the “List IDs” setting above, create a line (using a unique identifier) for each mailing list you want to manage. To remove a mailing list, simply remove the corresponding entry.</string>
+
+    <string name="appearance_settings">Appearance</string>
+    <string name="show_msg_id">Show message IDs</string>
+    <string name="show_abs_date">Show absolute date</string>
+
+    <string name="behaviour_settings">Behaviour</string>
+    <string name="auto_confirm">Discard without confirmation dialog</string>
+
+    <string name="display_name">Display name</string>
+    <string name="url">URL</string>
+    <string name="password">Password</string>
+    <string name="interval">Check for new mail:</string>
+    <string name="accept_discard">Accept selected,\ndiscard others</string>
+    <string name="accept_hold">Accept selected,\nhold others</string>
+    <string name="settings">Settings</string>
+</resources>
