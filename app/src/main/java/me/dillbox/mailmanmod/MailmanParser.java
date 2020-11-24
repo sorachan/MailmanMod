@@ -38,7 +38,7 @@ public class MailmanParser {
         for (String headerString : headerStrings) {
             String[] headerArray = headerString.split(": ", 2);
             if (headerArray.length > 1) {
-                String headerKey = headerArray[0];
+                String headerKey = headerArray[0].toLowerCase();
                 String headerValue = headerArray[1];
                 if (!headerMap.containsKey(headerKey)) {
                     headerMap.put(headerKey, headerValue);
@@ -48,8 +48,9 @@ public class MailmanParser {
 
         String sender = "";
         String email = "";
-        String fromRaw = headerMap.get("From").replaceAll("\\n\\t", " ");
+        String fromRaw = headerMap.get("from");
         if (fromRaw != null) {
+            fromRaw = fromRaw.replaceAll("\\n\\t", " ");
             String from = org.jsoup.parser.Parser.unescapeEntities(DecoderUtil.decodeEncodedWords(fromRaw, Charsets.DEFAULT_CHARSET), true);
             // this regex matches different mail address formats:
             // John Doe <jdoe@example.org> -> groups 5 and 6
@@ -73,13 +74,13 @@ public class MailmanParser {
         }
 
         String subject = "";
-        String subjectRaw = headerMap.get("Subject");
+        String subjectRaw = headerMap.get("subject");
         if (subjectRaw != null) {
             subject = org.jsoup.parser.Parser.unescapeEntities(DecoderUtil.decodeEncodedWords(subjectRaw, Charsets.DEFAULT_CHARSET), true);
         }
 
         String timestamp = "";
-        String receivedRaw = headerMap.get("Received").replaceAll("\\n\\t", " ");
+        String receivedRaw = headerMap.get("received").replaceAll("\\n\\t", " ");
         Log.i("rcvd", "raw: "+receivedRaw);
         if (receivedRaw != null) {
             String received = receivedRaw;

@@ -20,9 +20,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import okhttp3.OkHttpClient;
-import okhttp3.FormBody;
-
 public class MailmanHTTPHelper {
     private static final int VOLLEY_TIMEOUT = 10000;
     private static final int TIMEOUT_SECONDS = 10;
